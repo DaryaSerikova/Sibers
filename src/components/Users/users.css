@@ -1,0 +1,17 @@
+li {
+    list-style-type: none;
+}
+ul {
+    width: 50%;
+}
+
+.ulParent {
+    display: flex;
+    flex-direction: column;
+}
+
+.liParent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+{
+    "presets": [
+      [
+        "@babel/env", 
+        {
+          "targets": {
+            "node": "current"
+          },
+          "useBuiltIns": "entry",
+          "corejs": 2
+        }
+      ],
+      "@babel/react"
+    ]
+  }
