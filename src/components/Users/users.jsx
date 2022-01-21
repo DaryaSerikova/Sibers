@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import "./users.css";
-import User from '../user/user.jsx';
+// import User from '../user/user.jsx';
 import getUsers from '../../usersUtility';
 
 // import ResultCharacters from '../resultsCharacters/index.jsx'
@@ -31,11 +32,10 @@ function Users() {
 
                 return (<><ul className='ulParent'>
                     <li className='liParent'>
-                        <span className='itemLi' >
+                        <NavLink to={"/users/" + user["id"]}className='itemLi' >
                             <span className='itemLiInfo'>{user.id + 1}) { user.name },</span>
                             <span className='itemLiInfo'> phone : { user.phone }</span>
-                        </span>
-                        <button className='itemLi'>Редактировать</button>
+                        </NavLink>
                     </li>
                     {/* <li>username : { user.username }</li> */}
                     {/* <li>email : { user.email }</li>
@@ -60,7 +60,6 @@ function Users() {
                 </>)
             })
         }
-        <User/>
     </>)
 }
 

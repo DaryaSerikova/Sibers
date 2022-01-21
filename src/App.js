@@ -1,9 +1,10 @@
 import React from 'react';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Users from './components/Users/users.jsx';
-// import EpisodeInfo from './components/episodeInfo/index.jsx';
+import User from './components/User/user.jsx';
+
+
 
 
 
@@ -14,7 +15,7 @@ const App = (props) => {
                 <Routes>
 
                     <Route exact path="/users" element={<Users />}/>
-                    {/* <Route path="/episode/:episodeId" element={<EpisodeInfo/>}/> */}
+                    <Route path="/users/:userId" element={<User/>}/>
 
                 </Routes>
             </Router>
