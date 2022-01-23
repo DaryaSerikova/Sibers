@@ -16,10 +16,12 @@ function User() {
     }, [])
 
 
-    console.log(params.userId);
-    // console.log(users)
-    let currentUser = users.find(item => item.id == params.userId)
+    // console.log(params.userId);
+
+    let currentUser = users[params.userId]
+
     // console.log(currentUser !== undefined ? currentUser.name : "undefined" );
+
 
 
     return(
@@ -52,7 +54,9 @@ function User() {
                 </ul>
                 </> : ""
         }
+        <NavLink to={`/users/${params.userId}/edit`}><button>Редактировать контакт</button></NavLink>
         <NavLink to={"/users/"}><button>Вернуться к списку контактов</button></NavLink>
+        
         </>
     )
 }

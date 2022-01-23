@@ -1,0 +1,35 @@
+.parentField {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .itemForm {
+    display: flex;
+    justify-content: center;
+} */
+
+/* label {
+    
+} */
+/* 
+.editUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.wrapperFormButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+
+.wrapperWrapperFormButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 100%;
+}
