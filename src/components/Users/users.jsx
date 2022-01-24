@@ -4,31 +4,42 @@ import "./users.css";
 // import User from '../user/user.jsx';
 import getUsers from '../../usersUtility';
 
-// import ResultCharacters from '../resultsCharacters/index.jsx'
-// import { useParams } from "react-router-dom";
+
 
 const requestURL = 'https://demo.sibers.com/users';
 
 function Users() {
 
     const [users, setUsers] = useState([]);
+    const [searchedUsers, setSearched] = useState([]);
+    const [searchInput, setInput] = useState('')
 
     useEffect(() => {
         getUsers(setUsers)
-        // fetch(requestURL)
-        //     .then(res => res.json())
-        //     .then(users => { 
-        //         setUsers(users);
-        //     })
+
     }, [])
 
 
+    function handleChange(event) {
 
-    return(<>
+        setInput(event.target.value)
+        if (event.target.value.trim()) {
+            const searched = users.filter((user) => 
+                user.name.toLowerCase().includes(event.target.value.toLowerCase())
+            )
+            setSearched(searched)
+        } else {
+            setSearched([])
+        }
+    }
+    
+    
+    const viewedUsers = searchedUsers.length === 0 ? users : searchedUsers
+    return(
+        <>
+        <input value={searchInput} onChange={handleChange}/>
         {
-            users.map((user) => {
-                {/* console.log(user.name); */}
-                {/* console.log(user['name']); */}
+            viewedUsers.map((user) => {
 
                 return (<><ul className='ulParent'>
                     <li className='liParent'>
@@ -37,30 +48,12 @@ function Users() {
                             <span className='itemLiInfo'> phone : { user.phone }</span>
                         </NavLink>
                     </li>
-                    {/* <li>username : { user.username }</li> */}
-                    {/* <li>email : { user.email }</li>
-                    <li>
-                    address : 
-                        <ul className='userAdress'>
-                            <li>{ user.address.streetA },</li>
-                            <li>{ user.address.streetB },</li>  
-                            <li>{ user.address.streetC }, </li>
-                            <li>{ user.address.streetD }</li>
-                        </ul>
-                    </li>
-                    <li>city : { user.address.city }</li>
-                    <li>state : { user.address.state }</li>
-                    <li>country : { user.address.country }</li>
-                    <li>zipcode : { user.address.zipcode }</li>
-                    <li>geo : { user.address.geo.lat }, { user.address.geo.lng } </li> */}
-                    {/* <li>phone : { user.phone }</li> */}
-
                 </ul>
-                
                 </>)
             })
         }
-    </>)
+        </>
+    )
 }
 
 export default Users;

@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import "./editUser.css";
 import getUsers from '../../usersUtility';
+import FieldInput from '../FieldInput/fieldInput';
+import { fieldsList, fieldsAddressList } from '../constants';
 
 
 
@@ -14,7 +16,6 @@ function EditUser() {
     useEffect(() => {
         getUsers(setUsers)
     }, [])
-    // console.log(params.userId);
 
     useEffect(() => {
         setUser(users[params.userId])
@@ -23,6 +24,11 @@ function EditUser() {
     function handleInputChange(event) {
         const key = event.target.name
         setUser({...editedUser, [key]: event.target.value})
+    }
+
+    function handleAddressChange(event) {
+        const key = event.target.name
+        setUser({...editedUser, address: {[key]: event.target.value}})
     }
 
     function handleSubmit() {
@@ -34,29 +40,30 @@ function EditUser() {
 
     // console.log(editedUser)
 
-    // users[editedUser.id] = editedUser
-    // localStorage.setItem("users", users)
     return(
         editedUser ?
         <div className="wrapperWrapperFormButtons">
             <div className="wrapperFormButtons">
-            <form name="editUser" className="editUser" onSubmit={handleSubmit}>
-                <label className='parentField'>
-                    <input name="name" className="itemForm" value={editedUser.name} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.username} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.email} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.state} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.country} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.zipcode} onChange={handleInputChange}/>
-                    <input name="username" className="itemForm" value={editedUser.phone} onChange={handleInputChange}/>
-                </label>
-                <input type="submit" className="itemForm button" value="Сохранить изменения" />
-            </form>
-            <NavLink to={`/users/${params.userId}/`}><button  className="button">Вернуться к полной информации контакта</button></NavLink>
-            <NavLink to={"/users/"}><button className="button">Вернуться к списку контактов</button></NavLink>
-        </div>            
+                <form name="editUser" className="editUser" onSubmit={handleSubmit}>
+                
+                    <div className='parentField'>
+                    {fieldsList.map((item) => 
+                        <FieldInput name={item.name} label={item.label} editedUser={editedUser} handleInputChange={handleInputChange}/>
+                    )}
+                    {fieldsAddressList.map((item) => 
+                        <FieldInput name={item.name} label={item.label} editedUser={editedUser.address} handleInputChange={handleAddressChange}/>
+                    )}
+                    </div>
+                    <input type="submit" className="itemForm button" value="Сохранить изменения" />
+                </form>
+                <NavLink to={`/users/${params.userId}/`}>
+                    <button  className="button">Вернуться к полной информации контакта</button>
+                </NavLink>
+                <NavLink to={"/users/"}>
+                    <button className="button">Вернуться к списку контактов</button>
+                </NavLink>
+            </div>            
         </div>
-
         :
         ''
         

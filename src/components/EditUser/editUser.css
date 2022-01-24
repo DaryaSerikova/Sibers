@@ -1,16 +1,29 @@
 .parentField {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-/* .itemForm {
-    display: flex;
-    justify-content: center;
-} */
+label {
+  color: rgb(102, 102, 102);
+  font-size: 1.8vw;
+}
 
-/* label {
-    
-} */
+.field {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+  border-radius: 7px;
+  height: 1.3rem;
+  width: 100%;
+}
+
+.itemSpan :hover {
+  background-color: rgb(241, 241, 241) !important;
+}
+
 /* 
 .editUser {
     display: flex;
@@ -19,17 +32,59 @@
 } */
 
 .wrapperFormButtons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
 }
 
 .wrapperWrapperFormButtons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-    width: 100%;
+  width: 100%;
+  margin-left: 0.6rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  height: 2rem;
+}
+
+@media (min-width: 410px) and (max-width: 650px) {
+  .wrapperFormButtons {
+    width: 70%;
+  }
+
+  .field {
+    margin-top: 0.2rem;
+    margin-bottom: 0.7rem;
+    height: 1.5rem;
+  }
+
+  label {
+    font-size: 2.8vw;
+  }
+}
+
+@media (max-width: 419px) {
+  .wrapperFormButtons {
+    width: 95%;
+  }
+
+  .field {
+    margin-top: 0.15rem;
+    margin-bottom: 0.7rem;
+    height: 1.7rem;
+  }
+
+  label {
+    font-size: 3.6vw;
+  }
+}
+
+@media (max-width: 350px) {
+  label {
+    font-size: 4.8vw;
+  }
 }
