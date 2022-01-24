@@ -1,0 +1,98 @@
+.divWrapperWrapperUl {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.divWrapperUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    /* justify-content: center; */
+    /* padding-left: 14rem; */
+    padding-top: 2rem;
+}
+
+li {
+    padding-top:0.5rem;
+}
+
+.userAdress {
+    padding-left: 15px;
+}
+
+.bar {
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.wrapperBar {
+    height: 3.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    background-color: darkviolet;
+    margin: 0px;
+}
+
+.wrapperNavLinks {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.buttonBar {
+    height: 100% !important; 
+    font-size: 1.8vw;
+    background-color: darkviolet;
+    border: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* .NavLink {
+    height: 100%;
+} */
+button:hover {
+    color: rgb(220, 210, 224);
+}
+
+@media (min-width: 450px) and (max-width: 670px) {
+    .bar {
+        font-size: 3.3vw;
+    }
+
+    .buttonBar {
+        font-size: 2.4vw;
+        padding-left: 0rem;
+        padding-right: 1rem;
+    }
+    .ul {
+        padding-top: 1.4rem;
+    }
+}
+
+@media (max-width: 449px) {
+    .bar {
+        font-size: 4vw;
+    }
+
+    .buttonBar {
+        font-size: 3vw;
+    }
+
+    .ul {
+        padding-top: 0.8rem;
+    }
+}

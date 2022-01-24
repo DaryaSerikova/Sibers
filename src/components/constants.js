@@ -24,7 +24,7 @@ export const fieldsAddressList = [
     },
     {
         name: "streetB",
-        label: "streetB:"
+        label: "StreetB:"
     },
     {
         name: "streetC",

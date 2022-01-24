@@ -1,13 +1,11 @@
 li {
     list-style-type: none;
 }
-ul {
-    width: 50%;
-}
 
 .ulParent {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .liParent {
