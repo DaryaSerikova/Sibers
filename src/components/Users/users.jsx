@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import "./users.css";
 // import User from '../user/user.jsx';
-import getUsers from '../../usersUtility';
+import {getUsers, sortingWords} from '../../usersUtility';
 
 
 
@@ -32,26 +32,34 @@ function Users() {
             setSearched([])
         }
     }
+
+
     
     
-    const viewedUsers = searchedUsers.length === 0 ? users : searchedUsers
+    const viewedUsers = searchedUsers.length === 0 && !searchInput.trim() ? users : searchedUsers
     return(
         <>
-        <input value={searchInput} onChange={handleChange}/>
-        {
-            viewedUsers.map((user) => {
+            <div className='wrapperBar'>
+                <p className='titleUsers'>Контактная книга</p>
+            </div>
+            <div className='wrapperUsers'>
+                <input className='inputUsers' value={searchInput} placeholder='Search...' onChange={handleChange}/>
+                {
+                    viewedUsers.map((user) => {
 
-                return (<><ul className='ulParent'>
-                    <li className='liParent'>
-                        <NavLink to={"/users/" + user["id"]}className='itemLi' >
-                            <span className='itemLiInfo'>{user.id + 1}) { user.name },</span>
-                            <span className='itemLiInfo'> phone : { user.phone }</span>
-                        </NavLink>
-                    </li>
-                </ul>
-                </>)
-            })
-        }
+                        return (<>
+                        <ul className='ulParent'>
+                            <li className='liParent'>
+                                <NavLink to={"/users/" + user["id"]} className='itemLi' >
+                                    <span className='itemLiInfo'>{user.id + 1}. { user.name },</span>
+                                    <span className='itemLiInfo'> phone : { user.phone }</span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                        </>)
+                    })
+                }
+            </div> 
         </>
     )
 }

@@ -2,7 +2,7 @@ const requestURL = 'https://demo.sibers.com/users';
 
 
 
-function getUsers(callback) {
+export function getUsers(callback) {
     if(!JSON.parse(localStorage.getItem('users'))) {
         fetch(requestURL)
         .then(res => res.json())
@@ -16,4 +16,9 @@ function getUsers(callback) {
 
 }
 
-export default getUsers
+export function sortingWords(word1, word2) {
+    if (word1 > word2) return 1;
+    if (word1 < word2) return -1;
+    return 0;
+
+}

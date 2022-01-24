@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import "./editUser.css";
-import getUsers from '../../usersUtility';
+import {getUsers} from '../../usersUtility';
 import FieldInput from '../FieldInput/fieldInput';
 import { fieldsList, fieldsAddressList } from '../constants';
 
@@ -42,6 +42,8 @@ function EditUser() {
 
     return(
         editedUser ?
+        <>
+        <div className='wrapperBar'></div>
         <div className="wrapperWrapperFormButtons">
             <div className="wrapperFormButtons">
                 <form name="editUser" className="editUser" onSubmit={handleSubmit}>
@@ -64,6 +66,7 @@ function EditUser() {
                 </NavLink>
             </div>            
         </div>
+        </>
         :
         ''
         

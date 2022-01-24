@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import "./user.css";
-import getUsers from '../../usersUtility';
+import {getUsers} from '../../usersUtility';
 import { fieldsList, fieldsAddressList } from '../constants';
 
 
@@ -36,13 +36,13 @@ function User() {
                 <div className='divWrapperUl'>
                     <ul className='ul'>
                         {fieldsList.map(item => {
-                            return <li><b>{item.label}</b> { currentUser[item.name] }</li>                        
+                            return <li className='liUser'><b>{item.label}</b> { currentUser[item.name] }</li>                        
                         })}
                         <li>
-                        <b>Address :</b> 
+                        <div className='liUser'><b>Address :</b> </div>
                             <ul className='userAdress'>
                                 {fieldsAddressList.map(item => {
-                                    return <li><b>{item.label}</b> { currentUser.address[item.name] }</li>
+                                    return <li className='liUser'><b>{item.label}</b> { currentUser.address[item.name] }</li>
                                 })}
                             </ul>
                         </li>

@@ -5,11 +5,80 @@ li {
 .ulParent {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
+    padding-left: 0px;
+    margin-top: 0.7rem;
+    margin-bottom: 0rem ;
 }
 
 .liParent {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    border: 1px solid #ededed;
+    padding: 0.5rem;
+    background-color: #f7f7f7;
+    box-shadow: 3px 5px 5px -1px #d1d1d1;
+}
+
+li.liParent:hover {
+    box-shadow: 3px 5px 5px -1px #9400d37a;
+    background-color: rgb(255 255 255);
+    border: 1px solid #8d00c97a;
+}
+
+li.liParent:active {
+    box-shadow: 3px 5px 5px -1px #9400d37a;
+    background-color: rgb(255 255 255);
+    border: 1px solid #8d00c90e;
+}
+
+
+
+.inputUsers {
+    height: 2rem;
+    background-color: #fbfbfb;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    width: 48%;
+    font-size: 2.1vw;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+/* input {
+    border: 2px solid #b1b1b1;
+} */
+
+input:focus-visible {
+    box-shadow: 0px 0px 7px -1px #520075;
+    border: 2px solid #42005e9f;
+    outline: none;
+    color:#383838;
+    background-color: white !important;
+}
+
+.wrapperUsers {
+    margin: 2rem;
+}
+
+.titleUsers {
+    font-size: 2.5vw;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.itemLi {
+    display: flex;
+    flex-direction: column;
+    text-decoration-line: none;
+    width: 100%;
+    height: 100%;
+}
+
+.itemLiInfo {
+    color:darkviolet;
 }
