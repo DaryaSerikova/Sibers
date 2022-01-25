@@ -16,9 +16,14 @@ export function getUsers(callback) {
 
 }
 
-export function sortingWords(word1, word2) {
-    if (word1 > word2) return 1;
-    if (word1 < word2) return -1;
+export function sortingNames(word1, word2) {
+    if (word1.name > word2.name) return 1;
+    if (word1.name < word2.name) return -1;
     return 0;
+}
 
+export function sortingId(word1, word2) {
+    if (word1.id > word2.id) return 1;
+    if (word1.id < word2.id) return -1;
+    return 0;
 }

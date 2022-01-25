@@ -43,7 +43,18 @@ function EditUser() {
     return(
         editedUser ?
         <>
-        <div className='wrapperBar'></div>
+        
+        <div className='wrapperBar'>
+            <p className='barEditUser'>{editedUser.id + 1}. { editedUser.name }</p>
+            {/* <div className='navlinksWrapper'> */}
+                <NavLink className="itemBar" to={`/users/${params.userId}/`}>
+                    <button  className="buttonEditUser">Вернуться к полной информации контакта</button>
+                </NavLink>
+                <NavLink className="itemBar" to={"/users/"}>
+                    <button className="buttonEditUser">Вернуться к списку контактов</button>
+                </NavLink>
+            {/* </div> */}
+        </div>
         <div className="wrapperWrapperFormButtons">
             <div className="wrapperFormButtons">
                 <form name="editUser" className="editUser" onSubmit={handleSubmit}>
@@ -58,12 +69,6 @@ function EditUser() {
                     </div>
                     <input type="submit" className="itemForm button" value="Сохранить изменения" />
                 </form>
-                <NavLink to={`/users/${params.userId}/`}>
-                    <button  className="button">Вернуться к полной информации контакта</button>
-                </NavLink>
-                <NavLink to={"/users/"}>
-                    <button className="button">Вернуться к списку контактов</button>
-                </NavLink>
             </div>            
         </div>
         </>

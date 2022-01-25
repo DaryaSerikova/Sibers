@@ -16,6 +16,7 @@
     flex-direction: column;
     margin: 0px;
     padding-top: 2.2rem;
+    padding-left: 0px;
 }
 
 li {
@@ -94,13 +95,13 @@ button:hover {
     margin-bottom: 33px !important;
 } */
 
-@media (min-width: 450px) and (max-width: 670px) {
+@media (min-width: 445px) and (max-width: 670px) {
     .bar {
         font-size: 3.3vw;
     }
 
     .buttonBar {
-        font-size: 2.4vw;
+        font-size: 2.3vw;
         padding-left: 0rem;
         padding-right: 1rem;
     }
@@ -109,16 +110,61 @@ button:hover {
     }
 }
 
-@media (max-width: 449px) {
+@media (max-width: 450px) {
     .bar {
-        font-size: 4vw;
+        font-size: 3.7vw;
     }
 
     .buttonBar {
-        font-size: 3vw;
+        font-size: 2.9vw;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
     }
 
     .ul {
         padding-top: 0.8rem;
     }
+
+    /* .bar {
+        padding-right: 0px;
+    } */
 }
+
+@media (max-width: 419px) {
+    .wrapperBar {
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+    .wrapperNavLinks {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .navlinksUser {
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+
+        border-top: 1px solid rgb(130, 2, 185);
+        width: 100%;
+    }
+
+    /* .buttonBar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+
+    .ul {
+        width: 100%;
+    }
+
+    .liUser {
+        padding-left: 1rem;
+    }
+
+}
+
