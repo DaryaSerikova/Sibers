@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
-// import { useParams } from "react-router-dom";
-// import "./editUser.css";
-// import getUsers from '../../usersUtility';
+import React from 'react';
+
 
 
 

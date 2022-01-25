@@ -28,17 +28,17 @@ function EditUser() {
 
     function handleAddressChange(event) {
         const key = event.target.name
-        setUser({...editedUser, address: {[key]: event.target.value}})
+        setUser({...editedUser, address: {...editedUser.address, [key]: event.target.value}})
     }
 
     function handleSubmit() {
         users[params.userId] = editedUser;
-        console.log(users);
-        //localStorage.setItem("users", users);
+        console.log(editedUser);
+
         localStorage.setItem('users', JSON.stringify(users));
     }
 
-    // console.log(editedUser)
+
 
     return(
         editedUser ?
@@ -63,6 +63,7 @@ function EditUser() {
                     {fieldsList.map((item) => 
                         <FieldInput name={item.name} label={item.label} editedUser={editedUser} handleInputChange={handleInputChange}/>
                     )}
+                    {console.log(editedUser.address)}
                     {fieldsAddressList.map((item) => 
                         <FieldInput name={item.name} label={item.label} editedUser={editedUser.address} handleInputChange={handleAddressChange}/>
                     )}

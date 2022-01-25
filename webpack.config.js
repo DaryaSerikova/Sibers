@@ -4,15 +4,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-    // entry: './src/index.jsx',
   entry: {
     main: path.resolve(__dirname, './src/index.jsx'),
   },
 
   output: {
-    // path: path.resolve(__dirname, 'build'),
     path: path.resolve(__dirname, 'dist'),
-    //path: path.join(basePath, 'dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
@@ -20,15 +17,15 @@ module.exports = {
     modules: [
         path.join(__dirname, 'node_modules')
     ]
-  },// ????????????
+  },
   resolve: {
-    aliasFields: ['browser'], //???????????
+    aliasFields: ['browser'],
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
       bootstrapPath: path.join(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.min.css'),
       react: path.join(__dirname, 'node_modules', 'react'),
     },
-    extensions: ['.js', '.jsx'],// ?????????
+    extensions: ['.js', '.jsx'],
   },
   mode: 'development',
   devServer: {
@@ -60,7 +57,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      // template: './src/index.html',
       template: path.resolve(__dirname, './src/index.html'),
     }),
   ],
