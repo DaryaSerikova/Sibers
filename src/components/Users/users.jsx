@@ -17,20 +17,10 @@ function Users() {
     const [searchInput, setInput] = useState('')
     const [selectValue, setSelect] = useState('num')
 
-    
-    useEffect(() => {
-        const sortFunc = selectValue === "num" ? sortingId : sortingNames
-        if (searchedUsers.length === 0 && !searchInput.trim()) {
-            setUsers([...users].sort(sortFunc))
-
-        } else {
-            setSearched([...searchedUsers].sort(sortFunc))
-        }
-    }, [selectValue])
-
     useEffect(() => {
         getUsers(setUsers)
     }, [])
+
 
     function handleChange(event) {
 
@@ -41,12 +31,21 @@ function Users() {
             )
             setSearched(searched)
         } else {
-            setSearched([])
+            setSearched([...users])
         }
     }
 
     function handelSelect(event) {
         setSelect(event.target.value)
+        const sortFunc = event.target.value === "num" ? sortingId : sortingNames
+        setSearched([...searchedUsers].sort(sortFunc))
+        setUsers([...users].sort(sortFunc))
+        // if (searchedUsers.length === 0 && !searchInput.trim()) {
+        //     setUsers([...users].sort(sortFunc))
+
+        // } else {
+        //     setSearched([...searchedUsers].sort(sortFunc))
+        // }
     }
 
     const viewedUsers = searchedUsers.length === 0 && !searchInput.trim() ? users : searchedUsers;

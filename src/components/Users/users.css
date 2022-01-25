@@ -18,7 +18,7 @@ li {
 .liParent {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
     border: 1px solid #ededed;
     padding: 0.5rem;
     background-color: #f7f7f7;
