@@ -1,7 +1,6 @@
 const requestURL = 'https://demo.sibers.com/users';
 
 
-
 export function getUsers(callback) {
     if(!JSON.parse(localStorage.getItem('users'))) {
         fetch(requestURL)

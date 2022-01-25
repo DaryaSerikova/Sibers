@@ -52,13 +52,13 @@ function Users() {
 
     return(
         <>
-            <div className='wrapperBar'>
+            <div className='wrapperBar wrapperBarUsers'>
                 <p className='titleUsers'>Книга контактов</p>
             </div>
             <div className='content'>
                 <div className='wrapperUsers'>
                     <input className='inputUsers' value={searchInput} placeholder='Search...' onChange={handleChange}/>
-                    <select value={selectValue} name="select" onChange={handelSelect}> 
+                    <select value={selectValue} name="select" className='select' onChange={handelSelect}> 
                         <option value="num">По нумерации</option>
                         <option value="lex">По алфавиту</option>
                     </select>

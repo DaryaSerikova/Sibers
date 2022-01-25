@@ -7,7 +7,6 @@
 .divWrapperUl {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     width: 100%;
 }
 
@@ -28,12 +27,13 @@ li {
 }
 
 .bar {
-    font-size: 2.5vw;
+    font-size: 14pt;
     display: flex;
     align-items: center;
     padding-left: 2rem;
-    /* color: #c30038; */
+    padding-right: 1rem;
     font-weight: 600;
+    border-right: 1px solid rgb(129, 0, 184);
 }
 
 .wrapperBar {
@@ -42,8 +42,7 @@ li {
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    background-color: darkviolet;
-    /* background-color: rgb(24, 24, 24); */
+    background-color: rgb(129, 0, 184);
     margin: 0px;
 }
 
@@ -51,59 +50,43 @@ li {
     display: flex;
     flex-direction: row;
     height: 100%;
+    background-color: darkviolet;
 }
 
 .buttonBar {
     height: 100% !important; 
-    font-size: 1.8vw;
     background-color: darkviolet;
-    /* background-color: rgb(24, 24, 24); */
     border: 0px;
     padding-left: 1rem;
-    padding-right: 1rem;
-    /* color: #a70035; */
-    /* color: #85002a; */
+    padding-right: 0.8rem;
     font-weight: 600;
 }
 
-/* .NavLink {
-    height: 100%;
-} */
 button:hover {
     color: rgb(220, 210, 224);
-    /* color: #db0047; */
-
 }
 
 .liUser {
-    /* border: 1px solid #d1d1d1;
-    padding: 0.3rem; */
     border: 1px solid #e5e5e5;
     padding: 0.3rem;
     background-color: #f3f3f3;
     color:  #6d039b;
-
-    /* background-color: #a3a3a3; */
-    /* border: 1px solid #161616;
-    padding: 0.3rem;
-    background-color: #1e1e1e; */
-    /* color: #ab8a94; */
-    /* width: 50%; */
 }
 
-/* p.liUser {
-    margin-bottom: 33px !important;
-} */
 
 @media (min-width: 445px) and (max-width: 670px) {
     .bar {
-        font-size: 3.3vw;
+        /* font-size: 3.3vw; */
+        padding-left: 1.3rem;
+        padding-right: 1rem;
+
+        font-size: 13pt;
     }
 
     .buttonBar {
-        font-size: 2.3vw;
-        padding-left: 0rem;
-        padding-right: 1rem;
+        padding-left: 0.8rem;
+        padding-right: 0rem;
+
     }
     .ul {
         padding-top: 1.4rem;
@@ -112,11 +95,14 @@ button:hover {
 
 @media (max-width: 450px) {
     .bar {
-        font-size: 3.7vw;
+        font-size: 12pt;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+
     }
 
     .buttonBar {
-        font-size: 2.9vw;
+        /* font-size: 8pt; */
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
     }
@@ -125,15 +111,14 @@ button:hover {
         padding-top: 0.8rem;
     }
 
-    /* .bar {
-        padding-right: 0px;
-    } */
 }
 
 @media (max-width: 419px) {
+    .bar {
+        border-right: none;
+    }
     .wrapperBar {
         display: flex;
-        /* align-items: center; */
         justify-content: center;
     }
 
@@ -147,16 +132,10 @@ button:hover {
         display: flex;
         /* align-items: center; */
         justify-content: center;
-
+        text-decoration: none;
         border-top: 1px solid rgb(130, 2, 185);
         width: 100%;
     }
-
-    /* .buttonBar {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    } */
 
     .ul {
         width: 100%;
@@ -168,3 +147,16 @@ button:hover {
 
 }
 
+@media (max-width: 290px) {
+    .bar {
+        font-size: 5.8vw;
+    }
+
+    .buttonBar {
+        font-size: 5.7vw;
+    }
+
+    .liUser {
+        font-size: 5.5vw;
+    }
+}

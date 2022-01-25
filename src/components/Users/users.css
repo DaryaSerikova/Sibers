@@ -49,6 +49,7 @@ li.liParent:active {
     padding-right: 0.8rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 input:focus-visible {
@@ -88,4 +89,108 @@ input:focus-visible {
 
 .nothing {
     margin: 1rem;
+}
+
+.select {
+    border: 1px solid #ededed;
+    background-color: #f7f7f7;
+    color: #9400d9; 
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+}
+
+select:focus-visible {
+    outline: none;
+}
+
+option:focus-visible {
+    background-color: darkviolet;
+    color: white;
+    /* outline: none; */
+}
+
+.wrapperBarUsers {
+    padding-left: 37%;
+    font-size: 17pt;
+}
+
+
+
+@media (min-width: 670px) and (max-width: 800px) {
+    .wrapperBarUsers {
+        padding-left: 35%;
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 610px) and (max-width: 670px) {
+    .wrapperBarUsers {
+        padding-left: 33%;
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 610px) {
+    .wrapperBarUsers {
+        padding-left: 31%;
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 550px) {
+    .wrapperBarUsers {
+        padding-left: 29%;
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 490px) {
+    .wrapperBarUsers {
+        padding-left: 27%;
+        font-size: 15pt;
+    }
+}
+
+@media (max-width: 419px) {
+    .wrapperBarUsers {
+        padding-left: 0px;
+        font-size: 15pt;
+    }
+    .titleUsers {
+        padding-left: 0px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .wrapperUsers{
+        margin-top: 1.2rem;
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+    }
+
+    .titleUsers {
+        font-size: 7.5vw;
+    }
+
+    .itemLiInfo {
+        padding-left: 0.25rem ;
+        font-size: 5.5vw;
+    }
+
+    .select {
+        font-size: 5.5vw;
+    }
+
+    .inputUsers {
+        font-size: 5.5vw;
+        height: 1.5rem;
+    }
+
+
+
 }

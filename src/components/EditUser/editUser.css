@@ -5,31 +5,21 @@
 
 label {
   color: rgb(102, 102, 102);
-  font-size: 1.8vw;
+  font-size: 10pt;
 }
 
 .field {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   margin-top: 0.3rem;
   margin-bottom: 0.8rem;
   border-radius: 7px;
-  height: 1.3rem;
+  height: 1.8rem;
   width: 100%;
+  box-sizing: border-box;
 }
-
-.itemSpan :hover {
-  background-color: rgb(241, 241, 241) !important;
-}
-
-/* 
-.editUser {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
 
 .wrapperFormButtons {
   display: flex;
@@ -45,25 +35,40 @@ label {
 }
 
 .buttonEditUser {
-  /* width: 100%; */
-  /* margin-left: 0.6rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem; */
-  /* height: 2rem; */
   height: 100%;
   background-color:darkviolet;
   outline: none;
-  font-size: 1.9vw;
   border: none;
   font-weight: 600;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .itemBar {
     display: flex;
     flex-direction: column;
     text-decoration-line: none;
-    /* width: 100%; */
     height: 100%;
+    background-color:darkviolet;
+}
+
+.barEditUser {
+    padding-left: 1rem;
+    font-weight: 600;
+}
+
+.saveButton {
+    height: 2rem !important;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input.saveButton:hover {
+    color: rgb(220, 210, 224);
+}
+
+input.saveButton:focus-visible {
+    color: rgb(220, 210, 224);
 }
 
 @media (min-width: 410px) and (max-width: 650px) {
@@ -74,17 +79,15 @@ label {
   .field {
     margin-top: 0.2rem;
     margin-bottom: 0.7rem;
-    height: 1.5rem;
-  }
-
-  label {
-    font-size: 2.8vw;
-  }
-
-  .buttonEditUser {
-    font-size: 2.4vw;
+    /* height: 1.6rem; */
   }
 }
+
+.navlinksWrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
 
 @media (max-width: 419px) {
   .wrapperFormButtons {
@@ -97,14 +100,17 @@ label {
     height: 1.7rem;
   }
 
-  label {
-    font-size: 3.6vw;
-  }
-
   .wrapperBar {
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  .navlinksWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
   }
 
   .itemBar {
@@ -114,20 +120,31 @@ label {
     padding-top: 0.55rem;
     border-top: 1px solid rgb(138, 1, 197);
   }
-
-  .buttonEditUser {
-    font-size: 3vw;
-  }
-
-
 }
 
-@media (max-width: 350px) {
+@media (max-width: 280px) {
   label {
-    font-size: 4.8vw;
+    font-size: 5.2vw;
+  }
+
+  .barEditUser {
+    font-size: 5.9vw;
+    padding-left: 0px;
   }
 
   .buttonEditUser {
-    font-size: 3.6vw;
+    font-size: 5.6vw;
+  }
+
+  .field {
+      font-size: 5.5vw;
+      height: 1.6rem;
+      width: 100%;
+      
+  }
+
+  .wrapperWrapperFormButtons {
+    margin-right: 0.15rem;
+    margin-left: 0.15rem;
   }
 }
