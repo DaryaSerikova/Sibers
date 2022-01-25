@@ -22,14 +22,18 @@ function User() {
 
     return(
         <>
-        { 
-            currentUser !== undefined ?
+        { //Attention! Ternary operator starts here and ends almost at the end of "return".
+            currentUser !== undefined ? //Checking for the existance of information about the current user
             <>
             <div className='wrapperBar'>
                 <p className='bar'>{currentUser.id + 1}. { currentUser.name }</p>
                 <div className='wrapperNavLinks'>
-                    <NavLink className='navlinksUser' to={`/users/${params.userId}/edit`}><button className='buttonBar'>Редактировать контакт</button></NavLink>
-                    <NavLink className='navlinksUser' to={"/users/"}><button className='buttonBar'>Вернуться к списку контактов</button></NavLink>
+                    <NavLink className='navlinksUser' to={`/users/${params.userId}/edit`}>
+                        <button className='buttonBar'>Редактировать контакт</button>
+                    </NavLink>
+                    <NavLink className='navlinksUser' to={"/users/"}>
+                        <button className='buttonBar'>Вернуться к списку контактов</button>
+                    </NavLink>
                 </div>
             </div>
             <div className='divWrapperWrapperUl'>
@@ -49,7 +53,7 @@ function User() {
                     </ul>
                 </div> 
             </div>
-                </> : ""
+                </> : "" //end of ternarny operator
         }
         
         </>

@@ -1,9 +1,7 @@
 import React from 'react';
 
 
-
-
-function FieldInput(props) {
+function FieldInput(props) { //field for editUser
     console.log(props.name)
 
     return(

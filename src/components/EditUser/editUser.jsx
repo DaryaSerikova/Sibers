@@ -21,12 +21,12 @@ function EditUser() {
         setUser(users[params.userId])
     }, [users])
 
-    function handleInputChange(event) {
+    function handleInputChange(event) { //first handler for updating data after editing
         const key = event.target.name
         setUser({...editedUser, [key]: event.target.value})
     }
 
-    function handleAddressChange(event) {
+    function handleAddressChange(event) { //second handler for updating data after editing
         const key = event.target.name
         setUser({...editedUser, address: {...editedUser.address, [key]: event.target.value}})
     }
@@ -41,7 +41,7 @@ function EditUser() {
 
 
     return(
-        editedUser ?
+        editedUser ? //start of ternary operator
         <>
         
         <div className='wrapperBar'>
@@ -74,7 +74,7 @@ function EditUser() {
         </div>
         </>
         :
-        ''
+        ''//end of ternary operator
         
     )
 

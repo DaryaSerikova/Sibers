@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import "./users.css";
-// import User from '../user/user.jsx';
 import {getUsers, sortingId, sortingNames} from '../../usersUtility';
-import { arrayOf } from 'prop-types';
 
-// array.sort(sortingWords);
+
 
 
 const requestURL = 'https://demo.sibers.com/users';
 
 function Users() {
 
-    const [users, setUsers] = useState([]);
-    const [searchedUsers, setSearched] = useState([]);
-    const [searchInput, setInput] = useState('')
+    const [users, setUsers] = useState([]); //users - Initial data received from the server
+    const [searchedUsers, setSearched] = useState([]); //searchedUsers - array of sorted data via query in input field
+    const [searchInput, setInput] = useState('') //searchInput - value of field input
     const [selectValue, setSelect] = useState('num')
 
     useEffect(() => {
-        getUsers(setUsers)
+        getUsers(setUsers) // Getting data from the server
     }, [])
 
 
-    function handleChange(event) {
+    function handleChange(event) { //handler for sorting the list of contacts by value in the input field
 
         setInput(event.target.value)
         if (event.target.value.trim()) {
@@ -35,19 +33,16 @@ function Users() {
         }
     }
 
-    function handelSelect(event) {
+    function handelSelect(event) { //numiric and alphabetical sortings
         setSelect(event.target.value)
         const sortFunc = event.target.value === "num" ? sortingId : sortingNames
-        setSearched([...searchedUsers].sort(sortFunc))
-        setUsers([...users].sort(sortFunc))
-        // if (searchedUsers.length === 0 && !searchInput.trim()) {
-        //     setUsers([...users].sort(sortFunc))
-
-        // } else {
-        //     setSearched([...searchedUsers].sort(sortFunc))
-        // }
+        setSearched([...searchedUsers].sort(sortFunc)) //
+        setUsers([...users].sort(sortFunc)) //
     }
+    
 
+    //viewedUsers - the list of users that is displayed on the page.
+    //The final list that we run through the "map" method.
     const viewedUsers = searchedUsers.length === 0 && !searchInput.trim() ? users : searchedUsers;
 
     return(
@@ -82,7 +77,6 @@ function Users() {
                     }
                 </div> 
             </div>
-
         </>
     )
 }
